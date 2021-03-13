@@ -11,7 +11,7 @@ namespace Opgave4SimpleRestService.Model
 
         public Beer(int id, string name, int price, int abv)
         {
-            _id = id;
+            Id = id;
             _name = name;
             _price = price;
             _abv = abv;

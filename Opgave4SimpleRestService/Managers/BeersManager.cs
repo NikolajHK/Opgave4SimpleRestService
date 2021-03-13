@@ -9,12 +9,12 @@ namespace Opgave4SimpleRestService.Managers
 {
     public class BeersManager
     {
-        private static int _EnsuingId = 1;
+        private static int _followingId = 1;
         private static readonly List<Beer> MyData = new List<Beer>
         {
-            new Beer(id: _EnsuingId++, "Alkoholfrei Bavaria", 10, 0),
-            new Beer(id: _EnsuingId++, "Erdinger", 20, 7),
-            new Beer(id: _EnsuingId++, "Carlsberg", 8, 5)
+            new Beer(id: _followingId++, "Alkoholfrei Bavaria", 10, 0),
+            new Beer(id: _followingId++, "Erdinger", 20, 7),
+            new Beer(id: _followingId++, "Carlsberg", 8, 5)
         };
 
         public List<Beer> GetAll()
@@ -29,7 +29,7 @@ namespace Opgave4SimpleRestService.Managers
 
         public Beer Create(Beer createBeer)
         {
-            createBeer.Id = _EnsuingId++;
+            createBeer.Id = _followingId++;
             MyData.Add(createBeer);
             return createBeer;
         }
@@ -44,7 +44,6 @@ namespace Opgave4SimpleRestService.Managers
         public Beer Update(int id, Beer updateBeer)
         {
             Beer beer = MyData.Find(findBeer => findBeer.Id == id);
-            beer.Id = updateBeer.Id;
             beer.Name = updateBeer.Name;
             beer.Price = updateBeer.Price;
             beer.Abv = updateBeer.Abv;
